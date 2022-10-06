@@ -10,7 +10,7 @@ public class Assignment {
     public static void main (String[] args){
 
         //date time formatter
-        String format = "mm-dd-yyy HH:mm:ss.SSS";
+        String format = "dd-MM-yyy HH:mm:ss.SSS";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
 
         ArrayList<User> userList = new ArrayList<>();
@@ -29,9 +29,9 @@ public class Assignment {
             FileOutputStream fOut = new FileOutputStream("ArrayList.txt");
 
             for (User user:userList){
-                fOut.write(("\nID: " + user.getId() + " | Name: " + user.getName()
+                fOut.write(("ID: " + user.getId() + " | Name: " + user.getName()
                         +" | Address: "+user.getAddress() + " | Time: "
-                        + (LocalDateTime.now().format(formatter))).getBytes());
+                        + (LocalDateTime.now().format(formatter)) + "\n").getBytes());
             }
 
         }catch (Exception e){
