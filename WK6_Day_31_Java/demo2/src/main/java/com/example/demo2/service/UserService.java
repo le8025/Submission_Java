@@ -149,7 +149,7 @@ public class UserService {
 //        return 10000 + r.nextInt(20000);
     }
 
-    //Day 30 - Assignment 4 JWT Token
+    //Day 30 Assignment 1
     private String getTokenForEmail (UserModel userModel){
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_YEAR, 10);
@@ -160,7 +160,7 @@ public class UserService {
                 .setId(""+userModel.getId())
                 .setIssuedAt(new Date())
                 .setExpiration(c.getTime())
-                .signWith(SignatureAlgorithm.HS512, "SECRETKEY") //change to environment in applications properties
+                .signWith(SignatureAlgorithm.HS512, "SECRETKEY")
                 .compact();
         return jwtToken;
     }
